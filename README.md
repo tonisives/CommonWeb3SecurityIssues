@@ -16,6 +16,7 @@
 
 ## Gas griefing / denial of service
 - Check all `require` and `revert` logic in case of unintentional reverts causing the user loss of gas
+- If send eth to an address with call, then receiver might be a contract that consumes arbitrary amount of gas and DoS the contract.
 
 ## ecrecover
 - Standard solidity ecrecover function is used without checking if the result is the zero address. Must check for zero address or use OZ `recover` from ECDSA library.
